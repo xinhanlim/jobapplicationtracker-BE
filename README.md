@@ -2,7 +2,7 @@
 Designed to track My Own Jobs Application and feel demoralised  
 Start Date : 11/6/2025
 
-## 11/6/2025 Lesson Learnt
+## 11/6/2025 Obstacle Found
 <details>
 <summary>Summary</summary>
 Things Done Today: 
