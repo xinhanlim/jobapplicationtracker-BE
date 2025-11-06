@@ -18,7 +18,8 @@ app.use(express.json()) // this must be in the index.js to process json files.
 ```
 
 ```bash
-Error Connecting To DataBase MongoServerSelectionError: C03C0F0AAA790000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:../deps/openssl/openssl/ssl/record/rec_layer_s3.c:1605:SSL alert number 80
+Error Connecting To DataBase MongoServerSelectionError...  record/rec_layer_s3.c:1605:SSL alert number 80
 ## Remember to edit Ip Address to allow access to anyone
 ```
+
 </details>
