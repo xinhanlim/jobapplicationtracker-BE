@@ -6,6 +6,7 @@ Start Date : 11/6/2025
 <details>
 <summary>Summary</summary>
 Things Done Today: 
+
 - setting up express node js w/ mongodb
 - connecting to mongodb
 - CRUD for users collection 
