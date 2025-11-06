@@ -5,13 +5,14 @@ Start Date : 11/6/2025
 ## 11/6/2025 Obstacle Found
 <details>
 <summary>Summary</summary>
-Things Done Today: 
+
+1. Things Done Today: 
 
 - setting up express node js w/ mongodb
 - connecting to mongodb
 - CRUD for users collection 
 
-Yet To Do : 
+2. Yet To Do : 
 - Add JWT ( not now, due to easier building of the rest of the portion)
 
 ```js
