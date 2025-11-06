@@ -52,6 +52,17 @@ async function deleteUser({
 
 }
 
-module.exports = { createUser, updateUser, deleteUser };
+async function getUser({_id}){
+    try{
+        const db = await connect()
+        const result = await db.collection('users').find({_id : new ObjectId(_id)})
+        return result
+    }catch(e){
+        console.log(e);
+    }
+}
+
+
+module.exports = { createUser, updateUser, deleteUser, getUser };
 
 

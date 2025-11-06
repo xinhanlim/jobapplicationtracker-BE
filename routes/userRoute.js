@@ -53,4 +53,17 @@ router.delete('/delete/:id', async (req,res)=>{
     }
 })
 
+router.get('/:id', async (req,res)=>{
+    try{
+        const _id = req.params.id;
+        const getUser = await userService.getUser({_id})
+        return getUser
+    }catch(e){
+        console.log(e);
+         res.status(500).json({
+            "message": "Error Getting User Info"
+        })
+    }
+})
+
 module.exports = router;

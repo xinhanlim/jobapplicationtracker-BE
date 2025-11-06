@@ -17,5 +17,10 @@ async function deleteUser({_id}){
     return deleteUser
 }
 
+async function getUser({_id}){
+    const getUser = await userDataLayer.getUser({_id})
+    return getUser
+}
 
-module.exports = {createUser, updateUser, deleteUser};
+
+module.exports = {createUser, updateUser, deleteUser, getUser};
