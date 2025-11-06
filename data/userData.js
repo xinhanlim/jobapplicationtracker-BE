@@ -20,9 +20,9 @@ async function createUser({
     }
 }
 
-async function updateUser({_id,
+async function updateUser({ _id,
     password = String,
-    display_name = String}) {
+    display_name = String }) {
     try {
         const db = await connect();
         const updateUser = {
@@ -30,7 +30,7 @@ async function updateUser({_id,
             display_name
         }
         const result = await db.collection('users').updateOne(
-            {_id: new ObjectId(_id)}, {$set: updateUser}
+            { _id: new ObjectId(_id) }, { $set: updateUser }
         )
         return result;
     } catch (e) {
@@ -38,6 +38,20 @@ async function updateUser({_id,
     }
 }
 
-module.exports = { createUser, updateUser };
+async function deleteUser({
+    _id
+}) {
+    try {
+        const db = await connect();
+        const result = await db.collection('users').deleteOne({_id: new ObjectId(_id)})
+        return result
+    } catch (e) {
+        console.log(e)
+    }
+
+
+}
+
+module.exports = { createUser, updateUser, deleteUser };
 
 
