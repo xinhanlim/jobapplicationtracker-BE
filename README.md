@@ -11,9 +11,10 @@ Start Date : 11/6/2025
 - setting up express node js w/ mongodb
 - connecting to mongodb
 - CRUD for users collection 
+- CUD for jobs collections, less READ
 
 2. Yet To Do : 
-- Add JWT  (not now, due to easier building of the rest of the portion)
+- Add JWT for users, creating middleware and password bcrypt (not now, due to easier building of the rest of the portion)
 - Adding reg exp to updating user and creating user (not now, due to easier building of the rest of the portion)
 
 3. Do i Need ? :
