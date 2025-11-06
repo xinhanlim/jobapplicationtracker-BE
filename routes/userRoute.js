@@ -8,9 +8,7 @@ router.post('/register', async (req, res) => {
         const { email, password, display_name } = req.body;
         const newUser = await userService.createUser({email, password, display_name});
         res.json(
-            {
-                "message": "User Created Successfully"
-            }
+            {"message": "User Created Successfully"}
         )
         return newUser;
     } catch (e) {

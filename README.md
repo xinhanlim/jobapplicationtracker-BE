@@ -9,12 +9,12 @@ Start Date : 11/6/2025
 ```js
 // Do Remember 
 argument handler must be a function 
-module.exports = router  [must be included in the route page.]
+module.exports = router  // [must be included in the route page.]
 ```
 
 ```js
 Cannot destructure property 'email' of 'req.body' as it is undefined. 
-app.use(express.json()) // this must be in the index.js to process json files.
+app.use(express.json())  // this must be in the index.js to process json files.
 ```
 
 ```bash
