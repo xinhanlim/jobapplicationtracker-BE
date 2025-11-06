@@ -43,7 +43,7 @@ router.delete('/delete/:id', async (req,res)=>{
         res.json({
             "message": "User Delete Successfully"
         })
-        
+
         return deleteUser
     }catch(e){
          console.log(e);
@@ -52,4 +52,5 @@ router.delete('/delete/:id', async (req,res)=>{
         })
     }
 })
+
 module.exports = router;
