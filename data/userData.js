@@ -1,25 +1,43 @@
 const connect = require('../server/database');
+const { ObjectId } = require('mongodb')
 
 async function createUser({
     email = String,
     password = String,
     display_name = String
-}){
-    try{
+}) {
+    try {
         const db = await connect();
         const userDoc = {
             email,
             password,
             display_name,
         }
-        console.log(userDoc)
         const result = await db.collection('users').insertOne(userDoc);
         return result;
-    }catch(e){
+    } catch (e) {
         console.log(e);
     }
 }
 
-module.exports = {createUser};
+async function updateUser({_id,
+    password = String,
+    display_name = String}) {
+    try {
+        const db = await connect();
+        const updateUser = {
+            password,
+            display_name
+        }
+        const result = await db.collection('users').updateOne(
+            {_id: new ObjectId(_id)}, {$set: updateUser}
+        )
+        return result;
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+module.exports = { createUser, updateUser };
 
 
