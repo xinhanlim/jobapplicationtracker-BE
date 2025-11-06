@@ -4,6 +4,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 const userRouter = require('./routes/userRoute')
+const jobRouter = require('./routes/jobRoute')
 
 const app = express();
 app.use(express.json())
@@ -13,6 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/user', userRouter)
+app.use('/api/jobs', jobRouter)
 
 app.listen(PORT, () => {
   console.log(`Server is running on Port ${PORT}`);

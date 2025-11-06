@@ -62,7 +62,5 @@ async function getUser({_id}){
     }
 }
 
-
 module.exports = { createUser, updateUser, deleteUser, getUser };
-
 
