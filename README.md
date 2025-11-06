@@ -16,6 +16,9 @@ Start Date : 11/6/2025
 - Add JWT  (not now, due to easier building of the rest of the portion)
 - Adding reg exp to updating user and creating user (not now, due to easier building of the rest of the portion)
 
+3. Do i Need ? :
+- READ for user,
+
 ```js
 // Do Remember 
 argument handler must be a function 
