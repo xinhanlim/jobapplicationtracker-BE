@@ -48,7 +48,11 @@ Error Connecting To DataBase MongoServerSelectionError...record/rec_layer_s3.c:1
 - User able to login equipped with jwtoken and when user want to delete account,update -> it will require this token to be able to do so. if not return an 401 error.
 - User CRUD completed.
 
-2. Stuck at Jsonwebtoken, AuthMiddleware
+2. Yet to do 
+- reg exp for login -> toublemsome for testing,
+- jobs updating and deletion only can be done if the user id is the one similar to the orignal created_by in jobs collections.
+
+### Stuck at Jsonwebtoken, AuthMiddleware
 - understanding jsonwebtoken
 ```js 
 const jwt = require('jsonwebtoken');
