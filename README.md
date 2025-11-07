@@ -2,7 +2,8 @@
 Designed to track My Own Jobs Application and feel demoralised  
 Start Date : 11/6/2025
 
-## 11/6/2025 Obstacle Found
+## 11/6/2025 Journey
+
 <details>
 <summary>Summary</summary>
 
@@ -35,5 +36,44 @@ app.use(express.json())  // this must be in the index.js to process json files.
 Error Connecting To DataBase MongoServerSelectionError...record/rec_layer_s3.c:1605:SSL alert number 80
 ## Remember to edit Ip Address to allow access to anyone
 ```
+
+</details>
+
+## 12/6/2025 Journey
+<details><summary>Summary</summary>
+
+1. Things Done Today: 
+
+- cRud , Read done for jobs. able to fetch jobs document based on userId.
+- User able to login
+
+2. Stuck at Jsonwebtoken, AuthMiddleware
+- understanding jsonwebtoken
+```js 
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
+
+function verifyToken (req, res, next) {
+
+    //so authHeader here is to extract the Authorization information 
+        const authHeader = req.headers['authorization'];
+    // so if authorization is found, "Authorization: Bearer ABC123,"
+    // use token as a variable to split it into the actual token from the authroization bearer.
+        const token = authHeader && authHeader.split(' ')[1];
+        if (!token) return res.sendStatus(403);
+        jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+            if (err) return res.sendStatus(403);
+            req.user = decoded
+            next();
+        });
+    };
+
+module.exports = verifyToken;
+```
+
+
+
+
+
 
 </details>
