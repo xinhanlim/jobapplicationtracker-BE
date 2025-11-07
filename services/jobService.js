@@ -12,8 +12,8 @@ async function updateJobs(input){
     return updateJob
 }
 
-async function deleteJobs(input){
-    const deleteJob = await jobDataLayer.deleteJobs(input)
+async function deleteJobs({_id}){
+    const deleteJob = await jobDataLayer.deleteJobs({_id})
     return deleteJob
 }
 
