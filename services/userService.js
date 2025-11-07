@@ -1,26 +1,28 @@
 const userDataLayer = require('../data/userData');
+const bcrypt = require('bcrypt');
 
-async function createUser({email,password, display_name}){
+async function createUser({ email, password, display_name }) {
 
-    const newUser = await userDataLayer.createUser({email, password, display_name})
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = await userDataLayer.createUser({ email, password: hashedPassword, display_name })
     return newUser
 }
 
-async function updateUser({_id, password, display_name}){
+async function updateUser({ _id, password, display_name }) {
 
-    const updateUser = await userDataLayer.updateUser({_id,password, display_name })
+    const updateUser = await userDataLayer.updateUser({ _id, password, display_name })
     return updateUser
 }
 
-async function deleteUser({_id}){
-    const deleteUser = await userDataLayer.deleteUser({_id})
+async function deleteUser({ _id }) {
+    const deleteUser = await userDataLayer.deleteUser({ _id })
     return deleteUser
 }
 
-async function getUser({_id}){
-    const getUser = await userDataLayer.getUser({_id})
+async function getUser({ email }) {
+    const getUser = await userDataLayer.getUser({ email })
     return getUser
 }
 
 
-module.exports = {createUser, updateUser, deleteUser, getUser};
+module.exports = { createUser, updateUser, deleteUser, getUser };

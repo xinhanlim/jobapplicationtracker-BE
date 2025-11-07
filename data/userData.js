@@ -52,10 +52,11 @@ async function deleteUser({
 
 }
 
-async function getUser({_id}){
+async function getUser({email}){
     try{
         const db = await connect()
-        const result = await db.collection('users').findOne({_id : new ObjectId(_id)},{ projection :{display_name: 1}});
+        const result = await db.collection('users').findOne({email});
+        console.log("DataLayer",result)
         return result
     }catch(e){
         console.log(e);
