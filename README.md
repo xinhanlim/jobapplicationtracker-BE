@@ -45,7 +45,8 @@ Error Connecting To DataBase MongoServerSelectionError...record/rec_layer_s3.c:1
 1. Things Done Today: 
 
 - cRud , Read done for jobs. able to fetch jobs document based on userId.
-- User able to login
+- User able to login equipped with jwtoken and when user want to delete account,update -> it will require this token to be able to do so. if not return an 401 error.
+- User CRUD completed.
 
 2. Stuck at Jsonwebtoken, AuthMiddleware
 - understanding jsonwebtoken
