@@ -56,7 +56,6 @@ async function getUser({email}){
     try{
         const db = await connect()
         const result = await db.collection('users').findOne({email});
-        console.log("DataLayer",result)
         return result
     }catch(e){
         console.log(e);

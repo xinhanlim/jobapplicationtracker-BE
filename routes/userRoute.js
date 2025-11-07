@@ -38,12 +38,12 @@ router.post('/login', async (req, res) => {
             'display_name': getUser.display_name
         }, process.env.JWT_SECRET_TOKEN,
             {
-                'expiresIn': "10h"
+                'expiresIn': "30mins"
             })
-        console.log(token);
-
+ 
         res.json({
             "message": "Login Successfully",
+            token
         })
         return getUser
     } catch (e) {
@@ -72,7 +72,7 @@ router.put('/update/:id',verifyToken, async (req, res) => {
     }
 })
 
-router.delete('/delete/:id', async (req, res) => {
+router.delete('/delete/:id', verifyToken, async (req, res) => {
     try {
         const _id = req.params.id;
         const deleteUser = await userService.deleteUser({ _id })

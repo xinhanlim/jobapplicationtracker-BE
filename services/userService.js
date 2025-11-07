@@ -10,7 +10,8 @@ async function createUser({ email, password, display_name }) {
 
 async function updateUser({ _id, password, display_name }) {
 
-    const updateUser = await userDataLayer.updateUser({ _id, password, display_name })
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const updateUser = await userDataLayer.updateUser({ _id, password:hashedPassword, display_name })
     return updateUser
 }
 
