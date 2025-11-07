@@ -71,9 +71,26 @@ function verifyToken (req, res, next) {
 module.exports = verifyToken;
 ```
 
+- When i login and update, i refresh my password is not hashed anymore..  thus returning 
+```bash
+"Invalid Email or Password" ##Error in my REST CLIENT
+## console.log results
+req.body testing123
+server user password testing123
+bcrypt compare false
+## the only thing i can predict is that, since after updating user info, password suppose to be hashed in the sever but it changes to look like the req.body thus  
+## creating a new password in it's hashed form(testing123) which might equal to others password which is different from the sever side.
+## so the problem is in the updateUser, it should have hashed the password in some weird long password instead of this.
+```
+- Solved it by adding bcrypt to hash password in the register and update user function
+```js
 
+async function updateUser({ _id, password, display_name }) {
 
-
-
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const updateUser = await userDataLayer.updateUser({ _id, password:hashedPassword, display_name })
+    return updateUser
+}
+```
 
 </details>
