@@ -52,6 +52,10 @@ Error Connecting To DataBase MongoServerSelectionError...record/rec_layer_s3.c:1
 - reg exp for login -> toublemsome for testing,
 - jobs updating and deletion only can be done if the user id is the one similar to the orignal created_by in jobs collections.
 
+3. thoughts 
+- i dont think jobs will need jwt for deletion and updating since its by user, and in the first place user is tagged with a jwt. 
+- does this method have some secruity issues ???? 
+
 ### Stuck at Jsonwebtoken, AuthMiddleware
 - understanding jsonwebtoken
 ```js 
