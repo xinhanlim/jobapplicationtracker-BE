@@ -17,4 +17,9 @@ async function deleteJobs(input){
     return deleteJob
 }
 
-module.exports = { createJobs, updateJobs, deleteJobs };
+async function getJobs({_id}){
+    const getJobs = await jobDataLayer.getJobs({_id});
+    return getJobs;
+}
+
+module.exports = { createJobs, updateJobs, deleteJobs, getJobs };

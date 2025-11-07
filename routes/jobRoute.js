@@ -66,5 +66,21 @@ router.delete('/delete/:id', async (req, res) => {
         })
     }
 })
-
+router.get('/:id', async (req,res)=>{
+    try{
+        const _id = req.params.id;
+        console.log(_id)
+        const getJobs = await jobService.getJobs({_id});
+        res.json({
+            "message": "Job Fetched Successfully"
+        })
+        return getJobs;
+        
+    }catch(e){
+       console.log(e);
+        res.status(500).json({
+            "message": "Error Fetching Jobs"
+        })
+    }
+})
 module.exports = router;

@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.json({ message: "Welcome to the API" });
 });
 
-app.use('/api/user', userRouter)
+app.use('/api/users', userRouter)
 app.use('/api/jobs', jobRouter)
 
 app.listen(PORT, () => {

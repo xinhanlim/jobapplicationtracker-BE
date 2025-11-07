@@ -70,4 +70,20 @@ async function deleteJobs({_id}){
     }
 }
 
-module.exports = { createJobs, updateJobs, deleteJobs }
+async function getJobs({_id}){
+    try{   
+        //_id is user objectId
+        const db = await connect();
+        const result = await db.collection('jobs').find({created_by: new ObjectId(_id)}).toArray();
+            if(result){
+                console.log("document found");
+                console.log(result);
+            }
+        return result;
+
+    }catch(e){
+        console.log(e)
+    }
+}
+
+module.exports = { createJobs, updateJobs, deleteJobs, getJobs }

@@ -43,7 +43,6 @@ router.delete('/delete/:id', async (req,res)=>{
         res.json({
             "message": "User Delete Successfully"
         })
-
         return deleteUser
     }catch(e){
          console.log(e);
@@ -57,6 +56,7 @@ router.get('/:id', async (req,res)=>{
     try{
         const _id = req.params.id;
         const getUser = await userService.getUser({_id})
+        console.log(_id);
         return getUser
     }catch(e){
         console.log(e);

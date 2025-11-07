@@ -55,7 +55,7 @@ async function deleteUser({
 async function getUser({_id}){
     try{
         const db = await connect()
-        const result = await db.collection('users').find({_id : new ObjectId(_id)})
+        const result = await db.collection('users').findOne({_id : new ObjectId(_id)},{ projection :{display_name: 1}});
         return result
     }catch(e){
         console.log(e);

@@ -36,6 +36,4 @@ Error Connecting To DataBase MongoServerSelectionError...record/rec_layer_s3.c:1
 ## Remember to edit Ip Address to allow access to anyone
 ```
 
-
-
 </details>
